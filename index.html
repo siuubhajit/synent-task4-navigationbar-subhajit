@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigation Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">Navigation</div>
+
+
+
+
+
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="index.html" data-page="index">Home</a></li>
+    <li><a href="about.html" data-page="about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+
+
+
+  
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<main class="content">
+
+
+
+
+  <section class="hero" id="home">
+    <h1>Home</h1>
+    <p>Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </section>
+
+  <section class="content-block" id="about">
+    <h2>About</h2>
+    <p>In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p><a class="text-link" href="about.html">Read the full story &rarr;</a></p>
+  </section>
+
+  <section class="content-block" id="services">
+    <h2>Services</h2>
+    <p>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    <ul class="service-list">
+      <li>
+
+        <h3>Nemo enim ipsam</h3>
+        <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+      </li>
+      <li>
+
+        <h3>Neque porro quisquam</h3>
+        <p>Qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+      </li>
+      <li>
+        <h3>Ut enim ad minima</h3>
+        <p>Veniam quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi.</p>
+      </li>
+
+    </ul>
+  </section>
+
+
+
+
+  <section class="content-block" id="contact">
+    <h2>Contact</h2>
+    <p>Reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+    <form class="contact-form">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Lorem Ipsum" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="lorem@ipsum.com" required>
+      </div>
+
+
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit." required></textarea>
+      </div>
+      <button type="submit">Send message</button>
+    </form>
+  </section>
+
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
