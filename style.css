@@ -30,6 +30,14 @@ body {
   justify-content: space-between;
   padding: 18px 32px;
   background: var(--nav-bg);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  transition: box-shadow 0.2s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .logo {

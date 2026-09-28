@@ -4,11 +4,13 @@ var navMenu = document.getElementById("navMenu");
 function openMenu() {
   navMenu.classList.add("active");
   hamburger.classList.add("open");
+  hamburger.setAttribute("aria-expanded", "true");
 }
 
 function closeMenu() {
   navMenu.classList.remove("active");
   hamburger.classList.remove("open");
+  hamburger.setAttribute("aria-expanded", "false");
 }
 
 hamburger.addEventListener("click", function () {
@@ -50,4 +52,11 @@ document.querySelectorAll(".nav-menu a[data-page]").forEach(function (link) {
     {
     link.classList.add("active");
   }
+});
+
+// give the header a shadow once the page has scrolled a bit
+var navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", function () {
+  navbar.classList.toggle("scrolled", window.scrollY > 8);
 });
