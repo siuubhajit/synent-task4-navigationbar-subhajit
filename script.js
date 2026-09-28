@@ -54,6 +54,32 @@ document.querySelectorAll(".nav-menu a[data-page]").forEach(function (link) {
   }
 });
 
+// highlight the matching nav link as the visitor scrolls past each
+// in-page section (Home / Services / Contact all live on index.html)
+if (currentPage === "index.html" || currentPage === "") {
+  var spyLinks = {};
+
+  document.querySelectorAll(".nav-menu a").forEach(function (link) {
+    var href = link.getAttribute("href");
+    if (href === "index.html") spyLinks.home = link;
+    else if (href.charAt(0) === "#") spyLinks[href.slice(1)] = link;
+  });
+
+  var spyObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var link = spyLinks[entry.target.id];
+      if (!link) return;
+      document.querySelectorAll(".nav-menu a").forEach(function (l) { l.classList.remove("active"); });
+      link.classList.add("active");
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+
+  document.querySelectorAll("main section[id]").forEach(function (section) {
+    spyObserver.observe(section);
+  });
+}
+
 // give the header a shadow once the page has scrolled a bit
 var navbar = document.querySelector(".navbar");
 
