@@ -1,10 +1,9 @@
-document.getElementById("hamburger").addEventListener("click", function () 
+var hamburger = document.getElementById("hamburger");
+var navMenu = document.getElementById("navMenu");
 
-
-
-
-{
-  document.getElementById("navMenu").classList.toggle("active");
+hamburger.addEventListener("click", function () {
+  var isOpen = navMenu.classList.toggle("active");
+  hamburger.classList.toggle("open", isOpen);
 });
 
 
