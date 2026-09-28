@@ -15,10 +15,13 @@ No server or build tools required. Open `index.html` directly in a browser.
 
 ## How the nav works
 
-- On screens above 768px, the menu items (`Home`, `About`, `Services`, `Contact`) sit in a row inside `.navbar`.
-- Below 768px, `.nav-menu` is hidden by default and the hamburger button (`#hamburger`) appears. Clicking it toggles the `.active` class, which shows the menu as a stacked dropdown.
-- `script.js` also compares the current page's filename against each link's `data-page` attribute and adds an `.active` class to the matching link, so the current page is highlighted in the nav.
+- On screens above 768px, the menu items (`Home`, `About`, `Services`, `Contact`) sit in a row inside `.navbar`, which is `position: sticky` and gains a shadow once the page scrolls.
+- Below 768px, `.nav-menu` collapses behind the hamburger button (`#hamburger`). Clicking it toggles the `.active` class on the menu and the `.open` class on the button, which slides the menu down (via `max-height`/`opacity`, so it animates) and morphs the three bars into an X. `aria-expanded` on the button tracks open/closed state for screen readers.
+- The menu also closes on: selecting a link, clicking anywhere outside `.navbar`, and pressing Escape.
+- `script.js` compares the current page's filename against each link's `data-page` attribute and adds an `.active` class to the matching link, so the current page is highlighted in the nav.
+- On the home page, an `IntersectionObserver` additionally highlights `Home`, `Services`, or `Contact` as you scroll past their section — a lightweight scroll-spy. `About` stays tied to the dedicated `about.html` page rather than the home page's short about teaser.
 - `Services` and `Contact` are anchor links (`#services`, `#contact`) on the home page. From `about.html` they point back to `index.html#services` and `index.html#contact`.
+- `prefers-reduced-motion: reduce` turns off the menu/scroll transitions for anyone who's asked for that.
 
 ## Styling notes
 

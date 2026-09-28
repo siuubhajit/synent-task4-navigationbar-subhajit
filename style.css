@@ -243,20 +243,24 @@ body {
 @media (max-width: 768px) {
   .nav-menu {
     position: absolute;
-    top: 62px;
+    top: 100%;
     left: 0;
     right: 0;
 
-
     flex-direction: column;
     background: var(--nav-bg);
-    padding: 20px 32px;
+    padding: 0 32px;
     gap: 18px;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
   }
 
   .nav-menu.active {
-    display: flex;
+    max-height: 320px;
+    opacity: 1;
+    padding: 20px 32px;
   }
 
   .hamburger {
@@ -265,5 +269,13 @@ body {
 
   .hero h1 {
     font-size: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu,
+  .hamburger span,
+  .navbar {
+    transition: none;
   }
 }
